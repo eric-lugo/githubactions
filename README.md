@@ -25,6 +25,8 @@ jobs:
        run: mvn -B package --file pom.xml
 ```
 
+[![Build and test of Java Project](https://github.com/eric-lugo/githubactions/actions/workflows/main.yml/badge.svg)](https://github.com/eric-lugo/githubactions/actions/workflows/main.yml)
+
 ## Parte 2 - CD 
 ### Resolución de problemas con la suscripción de Estudiantes 
 
