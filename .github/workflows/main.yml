@@ -60,13 +60,6 @@ jobs:
       - name: Compute image tag
         run: echo "IMAGE_TAG=${GITHUB_SHA::7}" >> $GITHUB_ENV
 
-      - name: Debug backend values (staging)
-        run: |
-          echo "RG: >${{ vars.TFSTATE_RESOURCE_GROUP }}<"
-          echo "SA: >${{ vars.TFSTATE_STORAGE_ACCOUNT }}<"
-          echo "Container: >${{ vars.TFSTATE_CONTAINER }}<"
-          echo "Key: >${{ vars.TFSTATE_KEY_STAGING }}<"
-
       - name: Terraform init (staging backend)
         working-directory: iac
         run: |
@@ -145,13 +138,6 @@ jobs:
 
       - name: Compute image tag (use git tag name)
         run: echo "IMAGE_TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
-
-      - name: Debug backend values (production)
-        run: |
-          echo "RG: >${{ vars.TFSTATE_RESOURCE_GROUP }}<"
-          echo "SA: >${{ vars.TFSTATE_STORAGE_ACCOUNT }}<"
-          echo "Container: >${{ vars.TFSTATE_CONTAINER }}<"
-          echo "Key: >${{ vars.TFSTATE_KEY_PRODUCTION }}<"
 
       - name: Terraform init (production backend)
         working-directory: iac
